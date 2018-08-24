@@ -8,12 +8,12 @@ output.file:
   filename: filebeat
   rotate_every_kb: 100000
 
-#output.kafka:
-#  # initial brokers for reading cluster metadata
-#  hosts: ["kafka01-logaggr.srv.media.net:9092", "kafka02-logaggr.srv.media.net:9092", "kafka03-logaggr.srv.media.net:9092"]
-#  topic: ${LOGGING_KAFKA_TOPIC}
-#  partition.round_robin:
-#    reachable_only: true
+output.kafka:
+ # initial brokers for reading cluster metadata
+ hosts: ["<hosts>"]
+ topic: ${LOGGING_KAFKA_TOPIC}
+ partition.round_robin:
+   reachable_only: true
 
 logging.files:
       keepfiles: 7
